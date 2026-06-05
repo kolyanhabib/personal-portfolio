@@ -9,9 +9,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const navItems = [
-  { name: "About", link: "/#about" },
   { name: "Skills", link: "/#skills" },
   { name: "Projects", link: "/#projects" },
+  { name: "About", link: "/#about" },
   { name: "Contact", link: "/#contact" },
 ];
 
@@ -48,7 +48,7 @@ export default function Navbar() {
           tracking-wide
           "
         >
-          <span className="text-white">K.{" "}</span>Habib
+          <span className="text-white">K. </span>Habib
         </Link>
 
         {/* Desktop Menu */}
