@@ -2,7 +2,12 @@
 
 import { motion } from "framer-motion";
 
-import { FaGraduationCap, FaCalendarAlt, FaBookOpen } from "react-icons/fa";
+import {
+  FaGraduationCap,
+  FaCalendarAlt,
+  FaBookOpen,
+  FaAtom,
+} from "react-icons/fa";
 
 export default function Education() {
   return (
@@ -16,48 +21,6 @@ export default function Education() {
       overflow-hidden
       "
     >
-      {/* LEFT BLUR */}
-      <div
-        className="
-        blur-circle
-
-        w-55
-        h-55
-
-        sm:w-80
-        sm:h-80
-
-        lg:w-105
-        lg:h-105
-
-        bg-sky-500/10
-
-        top-0
-        left-0
-        "
-      />
-
-      {/* RIGHT BLUR */}
-      <div
-        className="
-        blur-circle
-
-        w-55
-        h-55
-
-        sm:w-80
-        sm:h-80
-
-        lg:w-105
-        lg:h-105
-
-        bg-cyan-500/10
-
-        bottom-0
-        right-0
-        "
-      />
-
       {/* GRID BACKGROUND */}
       <div
         className="
@@ -66,9 +29,45 @@ export default function Education() {
 
         bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)]
 
-        bg-size[40px_40px]
+        bg-size-[40px_40px]
 
         opacity-30
+        "
+      />
+
+      {/* LEFT GLOW */}
+      <div
+        className="
+        blur-circle
+
+        w-65
+        h-65
+
+        sm:w-100
+        sm:h-100
+
+        bg-sky-500/10
+
+        top-0
+        left-0
+        "
+      />
+
+      {/* RIGHT GLOW */}
+      <div
+        className="
+        blur-circle
+
+        w-65
+        h-65
+
+        sm:w-100
+        sm:h-100
+
+        bg-cyan-500/10
+
+        bottom-0
+        right-0
         "
       />
 
@@ -89,7 +88,7 @@ export default function Education() {
         <motion.div
           initial={{
             opacity: 0,
-            y: 50,
+            y: 40,
           }}
           whileInView={{
             opacity: 1,
@@ -104,12 +103,10 @@ export default function Education() {
           className="
           text-center
 
-          mb-14
-          sm:mb-16
-          lg:mb-20
+          mb-16
+          sm:mb-20
           "
         >
-          {/* SMALL TITLE */}
           <p
             className="
             text-sky-400
@@ -127,7 +124,6 @@ export default function Education() {
             Education
           </p>
 
-          {/* MAIN TITLE */}
           <h2
             className="
             font-black
@@ -173,11 +169,11 @@ export default function Education() {
           />
         </motion.div>
 
-        {/* EDUCATION CARD */}
+        {/* MAIN CARD */}
         <motion.div
           initial={{
             opacity: 0,
-            y: 70,
+            y: 60,
           }}
           whileInView={{
             opacity: 1,
@@ -192,19 +188,20 @@ export default function Education() {
           className="
           relative
 
-          glass
+          overflow-hidden
 
-          rounded-[28px]
-          sm:rounded-4xl
+          rounded-4xl
+
+          bg-[#081121]/80
+
+          backdrop-blur-xl
 
           border border-white/10
 
-          overflow-hidden
-
-          shadow-[0_10px_50px_rgba(0,0,0,0.35)]
+          shadow-[0_10px_60px_rgba(0,0,0,0.35)]
           "
         >
-          {/* TOP GLOW LINE */}
+          {/* TOP LIGHT */}
           <div
             className="
             absolute
@@ -221,81 +218,161 @@ export default function Education() {
             "
           />
 
+          {/* CONTENT */}
           <div
             className="
-            p-6
-            sm:p-8
-            lg:p-10
+            grid
+            lg:grid-cols-[320px_1fr]
             "
           >
+            {/* LEFT SIDE */}
             <div
               className="
+              relative
+
+              border-b
+              lg:border-b-0
+              lg:border-r
+
+              border-white/10
+
+              p-8
+              sm:p-10
+
               flex
-
               flex-col
-              lg:flex-row
+              items-center
+              justify-center
 
-              gap-8
-              lg:gap-10
+              text-center
               "
             >
-              {/* LEFT ICON */}
+              {/* ICON */}
+              <div
+                className="
+                relative
+
+                w-28
+                h-28
+
+                rounded-full
+
+                bg-sky-500/10
+
+                border border-sky-400/20
+
+                flex
+                items-center
+                justify-center
+
+                text-sky-400
+
+                text-5xl
+
+                mb-7
+                "
+              >
+                {/* GLOW */}
+                <div
+                  className="
+                  absolute
+                  inset-0
+
+                  rounded-full
+
+                  bg-sky-400/20
+
+                  blur-3xl
+                  "
+                />
+
+                <FaGraduationCap className="relative z-10" />
+              </div>
+
+              {/* DEGREE */}
+              <div
+                className="
+                inline-flex
+                items-center
+                gap-2
+
+                px-4
+                py-2
+
+                rounded-full
+
+                bg-sky-500/10
+
+                border border-sky-400/20
+
+                text-sky-300
+
+                text-xs
+                sm:text-sm
+
+                mb-5
+                "
+              >
+                <FaBookOpen />
+                Bachelor Degree
+              </div>
+
+              {/* YEAR */}
               <div
                 className="
                 flex
-                justify-center
-                lg:justify-start
+                items-center
+                gap-2
+
+                text-slate-400
+
+                text-sm
+                sm:text-base
                 "
               >
-                <div
-                  className="
-                  relative
-
-                  w-20
-                  h-20
-
-                  sm:w-24
-                  sm:h-24
-
-                  rounded-3xl
-
-                  bg-sky-500/10
-
-                  border border-sky-400/20
-
-                  flex
-                  items-center
-                  justify-center
-
-                  text-sky-400
-
-                  text-3xl
-                  sm:text-4xl
-
-                  shrink-0
-                  "
-                >
-                  {/* ICON GLOW */}
-                  <div
-                    className="
-                    absolute
-                    inset-0
-
-                    rounded-3xl
-
-                    bg-sky-400/10
-
-                    blur-2xl
-                    "
-                  />
-
-                  <FaGraduationCap className="relative z-10" />
-                </div>
+                <FaCalendarAlt />
+                2025 - 2029
               </div>
+            </div>
 
-              {/* RIGHT CONTENT */}
-              <div className="flex-1">
-                {/* DEGREE BADGE */}
+            {/* RIGHT SIDE */}
+            <div
+              className="
+              p-7
+              sm:p-10
+              lg:p-12
+              "
+            >
+              {/* COLLEGE */}
+              <h3
+                className="
+                text-2xl
+                sm:text-3xl
+                lg:text-4xl
+
+                font-black
+
+                leading-tight
+
+                mb-5
+                "
+              >
+                Netrokona Govt. College
+              </h3>
+
+              {/* SUBJECT */}
+              <div
+                className="
+                flex
+                flex-wrap
+
+                items-center
+
+                gap-3
+
+                mb-7
+                "
+              >
                 <div
                   className="
                   inline-flex
@@ -307,94 +384,129 @@ export default function Education() {
 
                   rounded-full
 
-                  bg-sky-500/10
+                  bg-cyan-500/10
 
-                  border border-sky-400/20
+                  border border-cyan-400/20
 
-                  text-sky-300
+                  text-cyan-300
 
-                  text-xs
-                  sm:text-sm
-
-                  mb-5
+                  text-sm
                   "
                 >
-                  <FaBookOpen />
-                  Bachelor Degree
+                  <FaAtom />
+                  Department of Physics
                 </div>
 
-                {/* COLLEGE */}
-                <h3
-                  className="
-                  text-2xl
-                  sm:text-3xl
-                  lg:text-4xl
-
-                  font-bold
-
-                  leading-tight
-
-                  mb-4
-                  "
-                >
-                  Netrokona Govt. College
-                </h3>
-
-                {/* SUBJECT */}
-                <p
-                  className="
-  text-slate-300
-
-  text-base
-  sm:text-lg
-
-  mb-3
-  "
-                >
-                  Department of Physics
-                </p>
-
-                {/* YEAR */}
                 <div
                   className="
                   inline-flex
-                  items-center
-                  gap-2
 
-                  text-slate-500
+                  px-4
+                  py-2
+
+                  rounded-full
+
+                  bg-white/5
+
+                  border border-white/10
+
+                  text-slate-300
 
                   text-sm
-                  sm:text-base
-
-                  mb-6
                   "
                 >
-                  <FaCalendarAlt />
-                  Expected Graduation: 2029
+                  Undergraduate Student
+                </div>
+              </div>
+
+              {/* DESCRIPTION */}
+              <p
+                className="
+  text-slate-400
+
+  leading-8
+
+  text-sm
+  sm:text-base
+  lg:text-lg
+
+  mb-8
+  "
+              >
+                Currently pursuing a Bachelor&apos;s degree in Physics while
+                continuously improving frontend and MERN stack development
+                skills through self-learning, modern technologies and real-world
+                projects. Passionate about creating responsive user interfaces,
+                interactive web experiences and scalable full-stack web
+                applications using React, Next.js, Node.js, Express.js, MongoDB
+                and Tailwind CSS.
+              </p>
+
+              {/* BOTTOM STATS */}
+              <div
+                className="
+                grid
+
+                sm:grid-cols-3
+
+                gap-4
+                "
+              >
+                {/* CARD */}
+                {/* CARD */}
+                <div
+                  className="
+  rounded-2xl
+
+  bg-white/5
+
+  border border-white/10
+
+  p-5
+  "
+                >
+                  <p className="text-slate-500 text-sm mb-2">Focus Area</p>
+
+                  <h4 className="font-semibold text-white">
+                    Frontend & MERN Stack
+                  </h4>
                 </div>
 
-                {/* DESCRIPTION */}
-                <p
+                {/* CARD */}
+                <div
                   className="
-                  text-slate-400
+                  rounded-2xl
 
-                  leading-7
-                  sm:leading-8
+                  bg-white/5
 
-                  text-sm
-                  sm:text-base
-                  lg:text-lg
+                  border border-white/10
 
-                  max-w-3xl
+                  p-5
                   "
                 >
-                  Currently pursuing a Bachelor degree while continuously
-                  improving frontend development skills through modern web
-                  technologies, real-world projects and self-learning. Focused
-                  on building responsive UI, scalable frontend architecture and
-                  interactive web applications using React, Next.js and modern
-                  development tools.
-                </p>
+                  <p className="text-slate-500 text-sm mb-2">Current Status</p>
+
+                  <h4 className="font-semibold text-white">
+                    Learning & Building
+                  </h4>
+                </div>
+
+                {/* CARD */}
+                <div
+                  className="
+                  rounded-2xl
+
+                  bg-white/5
+
+                  border border-white/10
+
+                  p-5
+                  "
+                >
+                  <p className="text-slate-500 text-sm mb-2">Graduation</p>
+
+                  <h4 className="font-semibold text-white">Expected 2029</h4>
+                </div>
               </div>
             </div>
           </div>

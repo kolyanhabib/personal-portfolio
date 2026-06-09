@@ -126,6 +126,22 @@ export default function About() {
               Modern Web Development
             </span>
           </h2>
+          <div
+            className="
+            w-24
+            h-1
+
+            rounded-full
+
+            bg-linear-to-r
+            from-sky-400
+            to-cyan-300
+
+            mx-auto
+
+            mt-6
+            "
+          />
         </motion.div>
 
         {/* CONTENT */}

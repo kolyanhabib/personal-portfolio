@@ -2,129 +2,284 @@
 
 import Link from "next/link";
 
-import { FaGithub, FaLinkedin, FaArrowUp } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaEnvelope, FaArrowUp } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer
       className="
       relative
-      pt-16
-      pb-10
+
       border-t border-white/10
+
       overflow-hidden
       "
     >
-      {/* Blur Background */}
-      <div className="blur-circle w-75 h-75 bg-sky-500/10 bottom-0 left-1/2 -translate-x-1/2" />
+      {/* BLUR */}
+      <div
+        className="
+        blur-circle
 
-      <div className="container mx-auto">
-        {/* Top */}
+        w-60
+        h-60
+
+        bg-sky-500/5
+
+        bottom-0
+        right-0
+        "
+      />
+
+      <div
+        className="
+        container
+        mx-auto
+
+        px-5
+        sm:px-8
+        lg:px-12
+
+        py-10
+        sm:py-12
+
+        relative
+        z-10
+        "
+      >
         <div
           className="
           flex
+
           flex-col
-          md:flex-row
+          lg:flex-row
+
           items-center
           justify-between
-          gap-10
-          mb-12
+
+          gap-8
           "
         >
-          {/* Logo */}
-          <div className="text-center md:text-left">
-            <h2
+          {/* LEFT */}
+          <div
+            className="
+            text-center
+            lg:text-left
+            "
+          >
+            {/* LOGO */}
+            <Link
+              href="/"
               className="
+              inline-flex
+              items-center
+
               text-3xl
+
               font-black
-              bg-linear-to-r
-              from-sky-400
-              to-cyan-300
-              bg-clip-text
-              text-transparent
+
+              tracking-wide
+
               mb-3
               "
             >
-              <span className="text-white">K. </span>Habib
-            </h2>
+              <span className="text-white">K.</span>
 
-            <p className="text-slate-400 max-w-md">
-              Frontend Developer passionate about building modern, responsive
-              and interactive web experiences.
+              <span
+                className="
+                bg-linear-to-r
+                from-sky-400
+                to-cyan-300
+
+                bg-clip-text
+                text-transparent
+                "
+              >
+                Habib
+              </span>
+            </Link>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+              text-slate-400
+
+              max-w-md
+
+              text-sm
+              sm:text-base
+
+              leading-7
+              "
+            >
+              Frontend & MERN Stack Developer passionate about building modern,
+              responsive and interactive web experiences.
             </p>
           </div>
 
-          {/* Social */}
-          <div className="flex items-center gap-5">
-            {/* GitHub */}
+          {/* RIGHT */}
+          <div
+            className="
+            flex
+            items-center
+
+            gap-4
+            "
+          >
+            {/* GITHUB */}
             <a
               href="https://github.com/kolyanhabib"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
               className="
-              w-14 h-14
+              group
+
+              w-12
+              h-12
+
               rounded-full
-              glass
-              flex items-center justify-center
-              text-xl
-              text-slate-300
-              hover:text-sky-400
-              hover:-translate-y-2
-              transition-all duration-300
+
+              bg-white/3
+
+              border border-white/10
+
+              flex
+              items-center
+              justify-center
+
+              text-slate-500
+
+              hover:text-white
+              hover:border-sky-400/20
+              hover:bg-sky-500/10
+
+              transition-all
+              duration-300
               "
             >
               <FaGithub />
             </a>
 
-            {/* LinkedIn */}
+            {/* LINKEDIN */}
             <a
               href="https://linkedin.com/in/kolyanhabib"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
               className="
-              w-14 h-14
+              group
+
+              w-12
+              h-12
+
               rounded-full
-              glass
-              flex items-center justify-center
-              text-xl
-              text-slate-300
-              hover:text-sky-400
-              hover:-translate-y-2
-              transition-all duration-300
+
+              bg-white/3
+
+              border border-white/10
+
+              flex
+              items-center
+              justify-center
+
+              text-slate-500
+
+              hover:text-white
+              hover:border-sky-400/20
+              hover:bg-sky-500/10
+
+              transition-all
+              duration-300
               "
             >
-              <FaLinkedin />
+              <FaLinkedinIn />
             </a>
 
-            {/* Back To Top */}
-            <Link
-              href="/#home"
+            {/* EMAIL */}
+            <a
+              href="mailto:kolyanhabib@gmail.com"
+              aria-label="Email"
               className="
-              w-14 h-14
+              group
+
+              w-12
+              h-12
+
               rounded-full
-              bg-sky-500
-              flex items-center justify-center
+
+              bg-white/3
+
+              border border-white/10
+
+              flex
+              items-center
+              justify-center
+
+              text-slate-500
+
+              hover:text-white
+              hover:border-sky-400/20
+              hover:bg-sky-500/10
+
+              transition-all
+              duration-300
+              "
+            >
+              <FaEnvelope />
+            </a>
+
+            {/* TOP BUTTON */}
+            <a
+              href="#home"
+              aria-label="Back To Top"
+              className="
+              w-12
+              h-12
+
+              rounded-full
+
+              bg-linear-to-r
+              from-sky-500
+              to-cyan-400
+
+              flex
+              items-center
+              justify-center
+
               text-white
-              hover:-translate-y-2
-              hover:bg-sky-400
-              transition-all duration-300
+
+              shadow-[0_10px_30px_rgba(56,189,248,0.35)]
+
+              hover:scale-105
+
+              transition-all
+              duration-300
               "
             >
               <FaArrowUp />
-            </Link>
+            </a>
           </div>
         </div>
 
-        {/* Bottom */}
+        {/* BOTTOM */}
         <div
           className="
-          border-t border-white/10
-          pt-8
+          border-t border-white/5
+
+          mt-10
+          pt-6
+
           text-center
           "
         >
-          <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} Kolyan Habib. All rights reserved.
+          <p
+            className="
+            text-slate-500
+
+            text-sm
+            "
+          >
+            © 2026 Kolyan Habib. All rights reserved.
           </p>
         </div>
       </div>

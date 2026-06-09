@@ -57,6 +57,7 @@ export default function Navbar() {
           hidden md:flex
           items-center
           gap-8 lg:gap-10
+          font-semibold
           "
         >
           {navItems.map((item) => (

@@ -21,16 +21,30 @@ export default function Projects() {
       overflow-hidden
       "
     >
-      {/* LEFT BLUR */}
+      {/* GRID BACKGROUND */}
+      <div
+        className="
+        absolute
+        inset-0
+
+        bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)]
+
+        bg-size-[40px_40px]
+
+        opacity-30
+        "
+      />
+
+      {/* LEFT GLOW */}
       <div
         className="
         blur-circle
 
-        w-[280px]
-        h-[280px]
+        w-70
+        h-70
 
-        sm:w-[420px]
-        sm:h-[420px]
+        sm:w-105
+        sm:h-105
 
         bg-sky-500/10
 
@@ -39,35 +53,21 @@ export default function Projects() {
         "
       />
 
-      {/* RIGHT BLUR */}
+      {/* RIGHT GLOW */}
       <div
         className="
         blur-circle
 
-        w-[280px]
-        h-[280px]
+        w-70
+        h-70
 
-        sm:w-[420px]
-        sm:h-[420px]
+        sm:w-105
+        sm:h-105
 
         bg-cyan-500/10
 
         bottom-0
         right-0
-        "
-      />
-
-      {/* GRID BG */}
-      <div
-        className="
-        absolute
-        inset-0
-
-        bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)]
-
-        bg-[size:40px_40px]
-
-        opacity-30
         "
       />
 
@@ -88,7 +88,7 @@ export default function Projects() {
         <motion.div
           initial={{
             opacity: 0,
-            y: 50,
+            y: 40,
           }}
           whileInView={{
             opacity: 1,
@@ -103,12 +103,10 @@ export default function Projects() {
           className="
           text-center
 
-          mb-14
-          sm:mb-18
-          lg:mb-22
+          mb-16
+          sm:mb-20
           "
         >
-          {/* SMALL TITLE */}
           <p
             className="
             text-sky-400
@@ -123,10 +121,9 @@ export default function Projects() {
             mb-4
             "
           >
-            My Portfolio
+            My Projects
           </p>
 
-          {/* BIG TITLE */}
           <h2
             className="
             font-black
@@ -141,7 +138,7 @@ export default function Projects() {
             Featured{" "}
             <span
               className="
-              bg-gradient-to-r
+              bg-linear-to-r
               from-sky-400
               to-cyan-300
 
@@ -149,7 +146,7 @@ export default function Projects() {
               text-transparent
               "
             >
-              Projects
+              Work
             </span>
           </h2>
 
@@ -157,11 +154,11 @@ export default function Projects() {
           <div
             className="
             w-24
-            h-[4px]
+            h-1
 
             rounded-full
 
-            bg-gradient-to-r
+            bg-linear-to-r
             from-sky-400
             to-cyan-300
 
@@ -172,16 +169,14 @@ export default function Projects() {
           />
         </motion.div>
 
-        {/* PROJECT GRID */}
+        {/* PROJECTS */}
         <div
           className="
-          grid
+          flex
+          flex-col
 
-          sm:grid-cols-2
-          xl:grid-cols-3
-
-          gap-6
-          lg:gap-8
+          gap-8
+          lg:gap-10
           "
         >
           {projects.map((project, index) => (
@@ -200,34 +195,32 @@ export default function Projects() {
               }}
               transition={{
                 duration: 0.6,
-                delay: index * 0.15,
+                delay: index * 0.1,
               }}
               className="
               group
 
               relative
 
-              rounded-[28px]
-
               overflow-hidden
 
-              bg-[#081121]/80
+              rounded-4xl
+
+              bg-[#081121]/85
 
               backdrop-blur-xl
 
-              border border-white/8
+              border border-white/10
 
               hover:border-sky-400/20
 
               transition-all
               duration-500
 
-              hover:-translate-y-3
-
-              shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+              shadow-[0_10px_60px_rgba(0,0,0,0.35)]
               "
             >
-              {/* TOP GLOW */}
+              {/* TOP LIGHT */}
               <div
                 className="
                 absolute
@@ -237,213 +230,82 @@ export default function Projects() {
                 w-full
                 h-px
 
-                bg-gradient-to-r
+                bg-linear-to-r
                 from-transparent
-                via-sky-400/40
+                via-sky-400/50
                 to-transparent
-
-                opacity-0
-                group-hover:opacity-100
-
-                transition
-                duration-500
                 "
               />
 
-              {/* IMAGE */}
               <div
                 className="
-                relative
+                grid
+                lg:grid-cols-2
 
-                overflow-hidden
+                items-center
                 "
               >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={600}
-                  height={400}
-                  className="
-                  w-full
-
-                  h-[220px]
-                  sm:h-[240px]
-
-                  object-cover
-
-                  group-hover:scale-110
-
-                  transition-transform
-                  duration-700
-                  "
-                />
-
-                {/* OVERLAY */}
+                {/* IMAGE SIDE */}
                 <div
                   className="
-                  absolute
-                  inset-0
+                  relative
 
-                  bg-gradient-to-t
-                  from-[#020617]
-                  via-[#020617]/30
-                  to-transparent
-                  "
-                />
+                  overflow-hidden
 
-                {/* LIVE ICON */}
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                  absolute
-                  top-4
-                  right-4
-
-                  w-11
-                  h-11
-
-                  rounded-full
-
-                  bg-black/40
-
-                  backdrop-blur-md
-
-                  border border-white/10
-
-                  flex
-                  items-center
-                  justify-center
-
-                  text-white
-
-                  hover:bg-sky-500
-                  hover:scale-110
-
-                  transition-all
-                  duration-300
+                  h-65
+                  sm:h-80
+                  lg:h-full
                   "
                 >
-                  <FaExternalLinkAlt />
-                </a>
-              </div>
-
-              {/* CONTENT */}
-              <div
-                className="
-                p-6
-                sm:p-7
-                "
-              >
-                {/* TECH STACK */}
-                <div
-                  className="
-                  flex
-                  flex-wrap
-
-                  gap-2
-
-                  mb-5
-                  "
-                >
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="
-                      px-3
-                      py-1.5
-
-                      rounded-full
-
-                      text-xs
-                      sm:text-sm
-
-                      bg-sky-500/10
-
-                      border border-sky-400/10
-
-                      text-sky-300
-                      "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* TITLE */}
-                <h3
-                  className="
-                  text-xl
-                  sm:text-2xl
-
-                  font-bold
-
-                  mb-4
-                  "
-                >
-                  {project.title}
-                </h3>
-
-                {/* DESCRIPTION */}
-                <p
-                  className="
-                  text-slate-400
-
-                  leading-7
-
-                  text-sm
-                  sm:text-base
-
-                  mb-7
-                  "
-                >
-                  {project.description}
-                </p>
-
-                {/* FOOTER */}
-                <div
-                  className="
-                  flex
-                  items-center
-                  justify-between
-                  "
-                >
-                  {/* DETAILS BTN */}
-                  <Link
-                    href={`/projects/${project.id}`}
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={900}
+                    height={700}
                     className="
-                    inline-flex
-                    items-center
+                    w-full
+                    h-full
 
-                    gap-2
+                    object-cover
 
-                    text-sky-400
+                    group-hover:scale-105
 
-                    font-semibold
-
-                    hover:gap-3
-
-                    transition-all
-                    duration-300
+                    transition-transform
+                    duration-700
                     "
-                  >
-                    View Details
-                    <FaArrowRight />
-                  </Link>
+                  />
 
-                  {/* GITHUB */}
+                  {/* OVERLAY */}
+                  <div
+                    className="
+                    absolute
+                    inset-0
+
+                    bg-linear-to-r
+                    from-black/40
+                    via-transparent
+                    to-transparent
+                    "
+                  />
+
+                  {/* LIVE BTN */}
                   <a
-                    href={project.github}
+                    href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-                    w-11
-                    h-11
+                    absolute
+                    top-5
+                    right-5
+
+                    w-12
+                    h-12
 
                     rounded-full
 
-                    bg-white/5
+                    bg-black/40
+
+                    backdrop-blur-md
 
                     border border-white/10
 
@@ -451,18 +313,198 @@ export default function Projects() {
                     items-center
                     justify-center
 
-                    text-slate-300
+                    text-white
 
-                    hover:text-sky-400
-                    hover:border-sky-400/20
-                    hover:bg-sky-500/10
+                    hover:bg-sky-500
+                    hover:scale-110
 
                     transition-all
                     duration-300
                     "
                   >
-                    <FaGithub />
+                    <FaExternalLinkAlt />
                   </a>
+                </div>
+
+                {/* CONTENT */}
+                <div
+                  className="
+                  p-6
+                  sm:p-8
+                  lg:p-10
+                  "
+                >
+                  {/* NUMBER */}
+                  <p
+                    className="
+                    text-sky-400/70
+
+                    text-sm
+
+                    tracking-[3px]
+
+                    uppercase
+
+                    mb-4
+                    "
+                  >
+                    Project 0{index + 1}
+                  </p>
+
+                  {/* TITLE */}
+                  <h3
+                    className="
+                    text-2xl
+                    sm:text-3xl
+                    lg:text-4xl
+
+                    font-black
+
+                    leading-tight
+
+                    mb-5
+                    "
+                  >
+                    {project.title}
+                  </h3>
+
+                  {/* DESCRIPTION */}
+                  <p
+                    className="
+                    text-slate-400
+
+                    leading-8
+
+                    text-sm
+                    sm:text-base
+
+                    mb-7
+                    "
+                  >
+                    {project.description}
+                  </p>
+
+                  {/* TECH STACK */}
+                  <div
+                    className="
+                    flex
+                    flex-wrap
+
+                    gap-3
+
+                    mb-8
+                    "
+                  >
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="
+                        px-4
+                        py-2
+
+                        rounded-full
+
+                        text-xs
+                        sm:text-sm
+
+                        bg-sky-500/10
+
+                        border border-sky-400/10
+
+                        text-sky-300
+
+                        hover:border-sky-400/30
+                        hover:bg-sky-500/15
+
+                        transition-all
+                        duration-300
+                        "
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* BUTTONS */}
+                  <div
+                    className="
+                    flex
+                    items-center
+
+                    gap-4
+
+                    flex-wrap
+                    "
+                  >
+                    {/* DETAILS */}
+                    <Link
+                      href={`/projects/${project.id}`}
+                      className="
+                      inline-flex
+                      items-center
+
+                      gap-3
+
+                      px-6
+                      py-3.5
+
+                      rounded-full
+
+                      bg-linear-to-r
+                      from-sky-500
+                      to-cyan-400
+
+                      hover:from-sky-400
+                      hover:to-cyan-300
+
+                      text-white
+
+                      font-semibold
+
+                      shadow-[0_0_30px_rgba(56,189,248,0.35)]
+
+                      hover:scale-105
+
+                      transition-all
+                      duration-300
+                      "
+                    >
+                      View Details
+                      <FaArrowRight />
+                    </Link>
+
+                    {/* GITHUB */}
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                      w-12
+                      h-12
+
+                      rounded-full
+
+                      bg-white/5
+
+                      border border-white/10
+
+                      flex
+                      items-center
+                      justify-center
+
+                      text-slate-300
+
+                      hover:text-sky-400
+                      hover:border-sky-400/30
+                      hover:bg-sky-500/10
+
+                      transition-all
+                      duration-300
+                      "
+                    >
+                      <FaGithub />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>

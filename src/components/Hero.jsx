@@ -6,11 +6,7 @@ import { motion } from "framer-motion";
 
 import { TypeAnimation } from "react-type-animation";
 
-import {
-  FaGithub,
-  FaLinkedin,
-  FaDownload,
-} from "react-icons/fa";
+import {FaDownload } from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -283,80 +279,6 @@ export default function Hero() {
               <FaDownload />
               Download Resume
             </a>
-
-            {/* SOCIALS */}
-            <div
-              className="
-              flex
-              items-center
-
-              gap-3
-              "
-            >
-              {/* GITHUB */}
-              <a
-                href="https://github.com/kolyanhabib"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                w-12
-                h-12
-
-                rounded-full
-
-                glass
-
-                border border-white/10
-
-                flex
-                items-center
-                justify-center
-
-                text-lg
-
-                text-slate-300
-
-                hover:text-sky-400
-                hover:border-sky-400/40
-
-                transition-all duration-300
-                "
-              >
-                <FaGithub />
-              </a>
-
-              {/* LINKEDIN */}
-              <a
-                href="https://linkedin.com/in/kolyanhabib"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                w-12
-                h-12
-
-                rounded-full
-
-                glass
-
-                border border-white/10
-
-                flex
-                items-center
-                justify-center
-
-                text-lg
-
-                text-slate-300
-
-                hover:text-sky-400
-                hover:border-sky-400/40
-
-                transition-all duration-300
-                "
-              >
-                <FaLinkedin />
-              </a>
-            </div>
           </div>
         </motion.div>
 
